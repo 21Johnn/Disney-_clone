@@ -1,5 +1,8 @@
 .plans{
     padding: 5.6vw;
+    display: flex;
+            flex-direction: column;
+            align-items: center;
 
     h2{
         text-align: center;
@@ -10,6 +13,15 @@
         justify-content: space-around;
         margin-bottom: 50px;
         margin-top: 25px;
+
+        @media (max-width:768px){          
+            display: block;
+            
+        }
+
+        .button{
+            margin-top: 24px;
+        }
 
         &__item{
             text-align: center;

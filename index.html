@@ -10,11 +10,28 @@
     <link rel="stylesheet" href="dist/css/main.css">
 </head>
 <body>
+    <header class="header">
+        <div class="header__container">
+            <h1 >
+                <img src="./dist/images/disneyplus.svg" alt="Disney+" class="header__logo">
+            </h1>
+            <ul class="header__links">
+                <li class="header__links__item">
+                    <a href="#" class="button button--secundary">ASSINE AGORA</a>
+                </li>
+                <li class="header__links__item">
+                    <a href="#" class="button button--dark">
+                        ENTRAR
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
     <section class="hero">
         <div class="hero__content">
-            <h1 class="hero__content__branding">
+            <div class="hero__content__branding">
                 <img src="./dist/images/disneyplus.svg" alt="Disney+">
-            </h1>
+            </div>
             <h3 class="small--title">
                 As melhores historias em um só lugar.
             </h3>
@@ -143,7 +160,10 @@
         </div>
     </section>
     <section class="image-text-section image-text-section--image-full-width">
-        <img src="dist/images/fundo_rei_leao.png" alt="dispositivos tv, pc tablet e celular">
+        <picture>
+            <source media="(max-width: 768px)" srcset="./dist/images/fundo_rei_leao_celular.png">
+            <img src="dist/images/fundo_rei_leao.png" alt="dispositivos tv, pc tablet e celular">
+        </picture>       
         <div class="  image-text-section--image-full-width__text_container  image-text-section--image-full-width">
             <h2 class="title">Baixe filmes e séries</h2>
             <p class="big--text">

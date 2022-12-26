@@ -5,6 +5,7 @@
 @use 'devices';
 @use 'faq';
 @use 'footer';
+@use 'header';
 
 @font-face{
     font-family: Avenir;
@@ -44,26 +45,51 @@ body{
 
 .big--text{
     @include text(18px);
+
+    @media (max-width:768px){
+        @include text(15px)
+    }
 }
 
 .text {
     @include text;
+
+    @media (max-width:768px){
+        @include text(14px)
+    }
 }
+
 
 .small--text{
     @include text(12px);
+
+    @media (max-width:768px){
+        @include text(11px)
+    }
 }
 
 .big--title {
     @include title(44px);
+
+    @media (max-width:768px){
+        @include title(26px)
+    }
 }
 
 .title{
     @include title;
+
+    @media (max-width:768px){
+        @include title(24px)
+    }
 }
 
 .small--title{
-    @include title(28px)
+    @include title(28px);
+
+    @media (max-width:768px){
+        @include title(22px)
+    }
 }
 
 .link-text{
@@ -73,17 +99,44 @@ body{
 }
 
 .button{
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         height: 60px;
         font-size: 18px;
         color: variaveis.$textSecondaryColor;
-        background-color: #6421ff;
+        background-color: variaveis.$btn-primary;
         border-radius: 4px;
-        margin-top: 2vw;
-        margin-bottom: 8px;
         border: none;
         cursor: pointer;
+        text-decoration: none;
+        padding: 8px 14px;
+        letter-spacing: 1px;
+        border: 1px solid variaveis.$btn-primary;
+
+        &:hover{
+            background-color: lighten(variaveis.$btn-primary, 3%);
+        }
+
+        &--secundary{
+            background-color: variaveis.$btn-secundary;
+            border-color: variaveis.$btn-secundary;
+
+            &:hover{
+                background-color: lighten(variaveis.$btn-secundary, 3%);
+            }
+        }
+
+        &--dark{
+            background-color: rgba($color: #000000, $alpha: 0.8);
+            border-color: variaveis.$textSecondaryColor;
+
+            &:hover{
+                background-color: variaveis.$textSecondaryColor;
+                color: #000;
+            }
+        }
     
 }
 
@@ -92,6 +145,10 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    @media (max-width:768px){
+        display: block;
+    }
 
     img{
         max-width: 100%;
@@ -122,6 +179,12 @@ body{
             flex-direction: column;
             justify-content: center;
             width: calc(50% - 5.6vw);
+
+            @media (max-width:768px){
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 
